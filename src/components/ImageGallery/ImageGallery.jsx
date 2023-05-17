@@ -14,7 +14,15 @@ const ImageGallery = ({ data, modalClick }) => {
 };
 export default ImageGallery;
 
-ImageGallery.propTypes={
+ImageGallery.propTypes = {
   data: PropTypes.array.isRequired,
   modalClick: PropTypes.func.isRequired,
-}
+  images: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      webformatURL: PropTypes.string.isRequired,
+      tags: PropTypes.string.isRequired,
+      largeImageURL: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+};
